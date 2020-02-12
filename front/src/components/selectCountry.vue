@@ -1,8 +1,10 @@
 <template>
   <div>
-    {{ this.info }}
-    <select name="" id="">
-      <option value=""></option>
+    {{ paisSeleccionado }}
+    <select v-model="paisSeleccionado" vue-on:change="this.regresarPais()">
+      <option v-for="(pais, key) in this.info" :key="key" :value="pais">{{
+        pais
+      }}</option>
     </select>
   </div>
 </template>
@@ -10,12 +12,19 @@
 export default {
   data() {
     return {
-      info: ""
+      info: [],
+      paisSeleccionado: ""
     };
+  },
+  methods: {
+    regresarPais() {
+      alert(this.paisSeleccionado);
+      this.$emit("onPais");
+    }
   },
   mounted() {
     this.axios
-      .get("http://127.0.0.1:8080/api/Festividades/obtenerPaises")
+      .get("http://127.0.0.1:8081/api/Festividades/obtenerPaises")
       .then(response => {
         this.info = response.data;
       });
