@@ -21,4 +21,14 @@ var estados = (req, res) => {
   }
 };
 
-module.exports = { festividades, noDefinida, paginainicio, estados };
+var fechas = (req, res) => {
+  var fechasFestivas = new Holidays(req.query.pais);
+  console.log(req.query.pais);
+  if (fechasFestivas !== undefined) {
+    res.send(fechasFestivas.getHolidays());
+  } else {
+    res.send([]);
+  }
+};
+
+module.exports = { festividades, noDefinida, paginainicio, estados, fechas };

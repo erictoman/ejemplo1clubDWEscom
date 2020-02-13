@@ -15,6 +15,10 @@ router.get("/api/Festividades/obtenerEstados", (req, res) => {
   functions.estados(req, res);
 });
 
+router.get("/api/Festividades/obtenerFechas", (req, res) => {
+  functions.fechas(req, res);
+});
+
 router.get("/", (req, res) => {
   functions.paginainicio(req, res);
 });
