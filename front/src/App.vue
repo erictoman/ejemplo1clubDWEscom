@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <selectCountry />
+    <selectCountry v-on:onPais="this.alerta" />
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   name: "app",
   components: {
     selectCountry
+  },
+  methods: {
+    alerta(pais) {
+      alert(pais);
+    }
   }
 };
 </script>

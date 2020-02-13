@@ -12,4 +12,13 @@ var paginainicio = (req, res) => {
   res.send("Pagina de inicio");
 };
 
-module.exports = { festividades, noDefinida, paginainicio };
+var estados = (req, res) => {
+  var estadosArray = hd.getStates(req.query.pais);
+  if (estadosArray !== undefined) {
+    res.send(estadosArray);
+  } else {
+    res.send([]);
+  }
+};
+
+module.exports = { festividades, noDefinida, paginainicio, estados };

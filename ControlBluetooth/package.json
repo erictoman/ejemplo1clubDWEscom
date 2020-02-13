@@ -1,0 +1,12 @@
+{
+  "name": "controlbluetooth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "control.js",
+  "scripts": {
+    "test": "node control.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

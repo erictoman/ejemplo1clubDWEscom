@@ -11,6 +11,10 @@ router.get("/api/Festividades/obtenerPaises", (req, res) => {
   functions.festividades(req, res);
 });
 
+router.get("/api/Festividades/obtenerEstados", (req, res) => {
+  functions.estados(req, res);
+});
+
 router.get("/", (req, res) => {
   functions.paginainicio(req, res);
 });
